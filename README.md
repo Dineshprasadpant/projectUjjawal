@@ -31,11 +31,9 @@ Make sure the following are installed before you begin:
 ## 📦 Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/hospital-locator.git
-cd hospital-locator
+git clone  https://github.com/Dineshprasadpant/projectUjjawal.git
+cd projectUjjawal
 ```
-
-> Replace `<your-username>` with the actual GitHub username or organization.
 
 ---
 
@@ -65,6 +63,20 @@ GO
 CREATE SPATIAL INDEX SIndex_Hospital_Location
 ON Hospitals(Location);
 GO
+
+INSERT INTO Hospitals (Name, Address, Location)
+VALUES 
+    ('Norvic International Hospital', 'Thapathali, Kathmandu', geography::Point(27.7172, 85.3240, 4326)),
+    ('Tribhuvan University Teaching Hospital (TUTH)', 'Maharajgunj, Kathmandu', geography::Point(27.7360, 85.3301, 4326)),
+    ('Grande International Hospital', 'Dhapasi, Kathmandu', geography::Point(27.7513, 85.3267, 4326)),
+    ('Nepal Mediciti Hospital', 'Bhaisepati, Lalitpur', geography::Point(27.6534, 85.3041, 4326)),
+    ('Patan Hospital', 'Lagankhel, Lalitpur', geography::Point(27.6685, 85.3206, 4326)),
+    ('Bir Hospital', 'Kanti Path, Kathmandu', geography::Point(27.7056, 85.3128, 4326)),
+    ('HAMS Hospital', 'Dhumbarahi, Kathmandu', geography::Point(27.7288, 85.3431, 4326)),
+    ('Om Hospital & Research Centre', 'Chabahil, Kathmandu', geography::Point(27.7176, 85.3468, 4326)),
+    ('B&B Hospital', 'Gwarko, Lalitpur', geography::Point(27.6672, 85.3340, 4326)),
+    ('Kanti Children''s Hospital', 'Maharajgunj, Kathmandu', geography::Point(27.7371, 85.3323, 4326));
+    GO
 ```
 
 3. Verify the `HosDB` database and `Hospitals` table appear in the Object Explorer.
@@ -207,15 +219,6 @@ const data = await response.json();
 | `.env.local` created with correct backend port | ☐ |
 | Frontend running (`npm run dev`) | ☐ |
 | App accessible at `http://localhost:3000` | ☐ |
-
----
-
-## ⚠️ Notes
-
-- CORS must be enabled in the backend to allow frontend requests.
-- SQL Server must be running **before** starting the backend.
-- Always use environment variables for API URLs — never hardcode them.
-- Do not commit `.env.local` to version control.
 
 ---
 
